@@ -1,4 +1,4 @@
-# Jean Test Mobile
+# Jean Test Mobile (Mubeans Tech Test)
 
 ### Getting started
 
