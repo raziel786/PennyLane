@@ -6,6 +6,7 @@ import {
   Text,
   FlatList,
   TouchableOpacity,
+  ActivityIndicator,
 } from 'react-native'
 import { Swipeable } from 'react-native-gesture-handler'
 import { useApi } from '../../api'
@@ -113,7 +114,7 @@ const InvoicesOverview: React.FC = () => {
   }, [fetchInvoices])
 
   if (loading) {
-    return null
+    return <ActivityIndicator size="large" testID="loading-indicator" />
   }
 
   const paidInvoices = invoices!.filter(({ paid }) => paid)

@@ -58,8 +58,9 @@ describe('InvoicesOverview', () => {
     ;(getInvoices as jest.Mock).mockResolvedValue(mockInvoices)
   })
 
-  it('renders loading state initially', () => {
-    const { queryByText } = render(<InvoicesOverview />)
+  it('renders the `Activity Indicator` initially', () => {
+    const { queryByText, getByTestId } = render(<InvoicesOverview />)
+    expect(getByTestId('loading-indicator')).toBeTruthy()
     expect(queryByText('PAID')).toBeNull()
     expect(queryByText('UNPAID')).toBeNull()
   })
